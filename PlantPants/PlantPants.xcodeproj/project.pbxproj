@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7717FB912B720992000745CA /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717FB8F2B720992000745CA /* Plant.swift */; };
+		7717FB922B720992000745CA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717FB902B720992000745CA /* Profile.swift */; };
+		7717FB982B7209B9000745CA /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717FB942B7209B9000745CA /* PlantCardView.swift */; };
+		7717FB992B7209B9000745CA /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717FB952B7209B9000745CA /* LogInView.swift */; };
+		7717FB9A2B7209B9000745CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717FB962B7209B9000745CA /* HomeView.swift */; };
+		7717FB9B2B7209B9000745CA /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717FB972B7209B9000745CA /* OptionsView.swift */; };
+		7717FB9E2B7209C5000745CA /* LoginSignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717FB9D2B7209C5000745CA /* LoginSignUpButton.swift */; };
 		774674842B71EA3A0020B2B7 /* PlantPantsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774674832B71EA3A0020B2B7 /* PlantPantsApp.swift */; };
 		774674862B71EA3A0020B2B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774674852B71EA3A0020B2B7 /* ContentView.swift */; };
 		774674882B71EA3C0020B2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774674872B71EA3C0020B2B7 /* Assets.xcassets */; };
@@ -14,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7717FB8F2B720992000745CA /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		7717FB902B720992000745CA /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		7717FB942B7209B9000745CA /* PlantCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
+		7717FB952B7209B9000745CA /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		7717FB962B7209B9000745CA /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7717FB972B7209B9000745CA /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		7717FB9D2B7209C5000745CA /* LoginSignUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignUpButton.swift; sourceTree = "<group>"; };
 		774674802B71EA3A0020B2B7 /* PlantPants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantPants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774674832B71EA3A0020B2B7 /* PlantPantsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPantsApp.swift; sourceTree = "<group>"; };
 		774674852B71EA3A0020B2B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +46,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7717FB8E2B72093C000745CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7717FB8F2B720992000745CA /* Plant.swift */,
+				7717FB902B720992000745CA /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7717FB932B72099C000745CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7717FB962B7209B9000745CA /* HomeView.swift */,
+				7717FB952B7209B9000745CA /* LogInView.swift */,
+				7717FB972B7209B9000745CA /* OptionsView.swift */,
+				7717FB942B7209B9000745CA /* PlantCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7717FB9C2B7209C5000745CA /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				7717FB9D2B7209C5000745CA /* LoginSignUpButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		774674772B71EA3A0020B2B7 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +93,9 @@
 		774674822B71EA3A0020B2B7 /* PlantPants */ = {
 			isa = PBXGroup;
 			children = (
+				7717FB9C2B7209C5000745CA /* Buttons */,
+				7717FB932B72099C000745CA /* View */,
+				7717FB8E2B72093C000745CA /* Model */,
 				774674832B71EA3A0020B2B7 /* PlantPantsApp.swift */,
 				774674852B71EA3A0020B2B7 /* ContentView.swift */,
 				774674872B71EA3C0020B2B7 /* Assets.xcassets */,
@@ -137,7 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7717FB992B7209B9000745CA /* LogInView.swift in Sources */,
+				7717FB9A2B7209B9000745CA /* HomeView.swift in Sources */,
 				774674862B71EA3A0020B2B7 /* ContentView.swift in Sources */,
+				7717FB9B2B7209B9000745CA /* OptionsView.swift in Sources */,
+				7717FB9E2B7209C5000745CA /* LoginSignUpButton.swift in Sources */,
+				7717FB982B7209B9000745CA /* PlantCardView.swift in Sources */,
+				7717FB922B720992000745CA /* Profile.swift in Sources */,
+				7717FB912B720992000745CA /* Plant.swift in Sources */,
 				774674842B71EA3A0020B2B7 /* PlantPantsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import SwiftUI
 struct PlantPantsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OptionsView()
         }
     }
 }

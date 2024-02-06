@@ -1,6 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "DALL·E 2024-01-25 17.41.44 - 9 different logos featuring a chubby, cute cartoon plant wearing pants, ensuring no white edges. The design should be simple and emphasize the plant's.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
