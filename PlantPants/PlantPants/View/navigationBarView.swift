@@ -33,7 +33,7 @@ struct NavigationBarView: View {
 // Preview
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarView(title: "PLANT PANTS", notificationAction: {
+        NavigationBarView(title: "PLANTPANTS", notificationAction: {
             print("Notification Icon Tapped")
         })
     }

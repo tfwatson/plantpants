@@ -15,7 +15,7 @@ struct HomeProfileView: View {
         HStack {
             // Displaying the user's name
             Text("Hello, \(userName)")
-                .font(.headline)
+                .font(.subheadline)
                 .padding(.leading, 8)
             
             // Displaying the user's profile picture

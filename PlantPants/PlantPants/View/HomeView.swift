@@ -24,7 +24,7 @@ struct HomeView: View {
                     }.frame(width: 370, height: 130)
                         .aspectRatio(contentMode: .fill)
                         .dynamicTypeSize(.accessibility3)
-                        .background(Color("backgroundColor"))
+                        .background(Color("AirForce"))
                         .cornerRadius(30)
 
                     // Title "MyPlants"
@@ -48,6 +48,9 @@ struct HomeView: View {
                         .frame(height: 210)
                     }
                     .padding(.leading, 9)
+                    
+                    Text("")
+                    
                 }
             }
         }

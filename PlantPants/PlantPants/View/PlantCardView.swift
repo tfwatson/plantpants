@@ -31,7 +31,7 @@ struct PlantCardView: View {
         .frame(width: 185, height: 100)
         .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
         .dynamicTypeSize(.accessibility3)
-        .background(Color("backgroundColor"))
+        .background(Color("Flame"))
         .cornerRadius(30)
         
     }
