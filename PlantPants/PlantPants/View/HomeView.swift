@@ -9,17 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        
-        let button: UIButton = {
-            let button = UIButton()
-            button.backgroundColor = .systemBlue
-            button.setTitle("Prev Controller", for: .normal)
-            button.layer.cornerRadius = 7
-            return button
-        }()
-        
-        
-        
         let columns: [GridItem] = [
             GridItem(.flexible()),
             GridItem(.flexible())]
