@@ -46,4 +46,5 @@ struct HomeView: View {
 
 
 // AddPlantCardView struct for the add button
+// Easy
 
