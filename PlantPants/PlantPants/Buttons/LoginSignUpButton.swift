@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LoginSignUpButton: View {
-    
     let title:String
     let backgroundColor:Color
     let textColor:Color

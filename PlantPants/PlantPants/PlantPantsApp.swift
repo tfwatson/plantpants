@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PlantPantsApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            OptionsView()
+            Group {
+                OptionsView()
+            }
         }
     }
 }
