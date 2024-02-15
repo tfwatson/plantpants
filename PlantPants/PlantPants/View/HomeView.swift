@@ -1,5 +1,8 @@
 import SwiftUI
 
+/**
+ Maybe have multiple shades of green and brown, then have pastel pink for highlighting, and shading
+ */
 struct HomeView: View {
     var body: some View {
         let columns: [GridItem] = [
@@ -49,7 +52,25 @@ struct HomeView: View {
                     }
                     .padding(.leading, 9)
                     
-                    Text("")
+                    Text("Connected Plants")
+                        .bold()
+                        .font(.title)
+                        .padding(.trailing, 150)
+                        .scaledToFit()
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHGrid(rows: columns, spacing: 10) {
+                            ForEach((0...mockData.mockProfile.plants.count), id: \.self) { index in
+                                if index < mockData.mockProfile.plants.count {
+                                    PlantCardView(givenPlant: mockData.mockProfile.plants[index])
+                                } else {
+                                    AddPlantCardView()
+                                }
+                            }
+                        }
+                        .frame(height: 210)
+                    }
+                    .padding(.leading, 9)
                     
                 }
             }

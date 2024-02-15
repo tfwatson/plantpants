@@ -9,7 +9,7 @@ import Foundation
 struct Profile: Hashable, Identifiable{
     let id = UUID()
     let name:String   //its let because they are not going to be changing. meaning they are constants
-    let image:String
+    let image:String	
     var plants: [Plant]
     
 }
