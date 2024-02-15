@@ -13,7 +13,7 @@ struct HomeView: View {
         NavigationView {
             VStack(spacing: 0) {
                 // Custom NavigationBarView at the top
-                NavigationBarView(title: "PLANT PANTS") {
+                NavigationBarView(title: "PLANTPANTS") {
                     print("notifications")
                 }
 
@@ -23,7 +23,7 @@ struct HomeView: View {
                     HomeProfileView(userName: "Andrew Gonzales", userProfilePicture: "default")
                     
                     VStack{
-                        
+                        Text("Toast notification Here")
                     }.frame(width: 370, height: 130)
                         .aspectRatio(contentMode: .fill)
                         .dynamicTypeSize(.accessibility3)
