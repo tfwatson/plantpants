@@ -52,25 +52,22 @@ struct HomeView: View {
                     }
                     .padding(.leading, 9)
                     
-                    Text("Connected Plants")
+                    Text("Plant Pals")
                         .bold()
                         .font(.title)
-                        .padding(.trailing, 150)
+                        .padding(.trailing, 240)
                         .scaledToFit()
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: columns, spacing: 10) {
-                            ForEach((0...mockData.mockProfile.plants.count), id: \.self) { index in
-                                if index < mockData.mockProfile.plants.count {
-                                    PlantCardView(givenPlant: mockData.mockProfile.plants[index])
-                                } else {
-                                    AddPlantCardView()
-                                }
+                            ForEach(mockData.mockProfile.pals, id: \.id) { pal in
+                                PalCardView(pal: pal.name)
                             }
+                            AddPalCardView()
                         }
                         .frame(height: 210)
+                        .padding(.leading, 9)
                     }
-                    .padding(.leading, 9)
                     
                 }
             }
