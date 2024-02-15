@@ -10,22 +10,30 @@ import SwiftUI
 struct LogInView: View {
     @State private var email:String=""
     @State private var password:String=""
+    @State private var action: Int? = 0
     var body: some View {
         ZStack{
-            VStack {
-                Text("Welcome Back, Please sign in")
-                    .bold()
-                    .font(.title2)
-                Image("babyPlantOne")
-                    .renderingMode(.original)
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                    .padding(.bottom)
-                LoginTextField(placeHolder: "Email", destination: $email)
-                LoginTextField(placeHolder: "Password", destination: $password)
-                LoginSignUpButton(title: "Log In", backgroundColor: Color("backgroundColor"), textColor: Color.white)
-                
-            }
+            
+                VStack {
+                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(), tag: 1, selection: $action) {}
+                    Text("Welcome Back, Please sign in")
+                        .bold()
+                        .font(.title2)
+                    Image("babyPlantOne")
+                        .renderingMode(.original)
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding(.bottom)
+                    LoginTextField(placeHolder: " Email", destination: $email)
+                    LoginTextField(placeHolder: " Password", destination: $password)
+                    LoginSignUpButton(title: "Log In", backgroundColor: Color("backgroundColor"), textColor: Color.white)
+                        .onTapGesture {
+                            self.action = 1
+                            let _ = print("CLICKED!")
+                        }
+                    
+                }
+            
         }.ignoresSafeArea()
     }
 }

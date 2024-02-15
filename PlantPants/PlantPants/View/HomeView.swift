@@ -74,6 +74,8 @@ struct HomeView: View {
         }
         .navigationBarHidden(true) // Hide the default navigation bar
     }
+    
+    
 }
 
 // Preview
