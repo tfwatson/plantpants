@@ -28,10 +28,10 @@ struct PlantCardView: View {
             }
             .frame(width: .infinity, height: .infinity)
         }
-        .frame(width: 190, height: 100)
+        .frame(width: 185, height: 100)
         .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
         .dynamicTypeSize(.accessibility3)
-        .background(Color("backgroundColor"))
+        .background(Color("Flame"))
         .cornerRadius(30)
         
     }
@@ -52,6 +52,42 @@ struct AddPlantCardView: View {
         .dynamicTypeSize(.accessibility3)
         .background(Color(.gray)).opacity(0.6)
         .cornerRadius(30)
+    }
+}
+
+
+struct AddPalCardView: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "plus.circle")
+                .font(.system(size: 27))
+                .scaledToFit()
+            Text("Add Pal")
+                .dynamicTypeSize(.accessibility1)
+        }
+        .frame(width: 190, height: 100)
+        .aspectRatio(contentMode: .fill)
+        .dynamicTypeSize(.accessibility3)
+        .background(Color(.gray)).opacity(0.6)
+        .cornerRadius(30)
+    }
+}
+
+struct PalCardView: View {
+    let pal:String
+    var body: some View {
+        VStack {
+            VStack {
+                Text(pal)
+                    .dynamicTypeSize(.accessibility1)
+            }
+        }
+        .frame(width: 185, height: 100)
+        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+        .dynamicTypeSize(.accessibility3)
+        .background(Color("Flame"))
+        .cornerRadius(30)
+        
     }
 }
 
