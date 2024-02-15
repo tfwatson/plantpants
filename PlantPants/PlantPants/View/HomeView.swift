@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        
         let columns: [GridItem] = [
             GridItem(.flexible()),
             GridItem(.flexible())]
@@ -37,8 +36,14 @@ struct HomeView: View {
                 }
             }
             .frame(width:.infinity, height: 213)
+        
+        
     }
+    
+    
 }
+
+
 
 #Preview {
     HomeView()
@@ -46,4 +51,5 @@ struct HomeView: View {
 
 
 // AddPlantCardView struct for the add button
+// Easy
 
