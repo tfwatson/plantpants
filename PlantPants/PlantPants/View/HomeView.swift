@@ -22,13 +22,15 @@ struct HomeView: View {
                     // User Profile and Name
                     HomeProfileView(userName: "Andrew Gonzales", userProfilePicture: "default")
                     
-                    VStack{
-                        Text("Toast notification Here")
-                    }.frame(width: 370, height: 130)
-                        .aspectRatio(contentMode: .fill)
-                        .dynamicTypeSize(.accessibility3)
-                        .background(Color("AirForce"))
-                        .cornerRadius(30)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(mockData.mockProfile.notifications, id: \.self) { notification in
+                                NotificationView(notification: notification)
+                            }
+                        }
+                        .padding(.horizontal, 15)
+                    }
+                    
 
                     // Title "MyPlants"
                     Text("MyPlants")

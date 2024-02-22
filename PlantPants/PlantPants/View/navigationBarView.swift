@@ -6,24 +6,19 @@ struct NavigationBarView: View {
 
     var body: some View {
         HStack {
-            // Invisible Spacer that matches the size of the notification icon
+            // Invisible Spacer on the left to balance the layout
             Color.clear
-                .frame(width: 70, height: 44) // Adjust size to match your notification icon size
+                .frame(width: 70, height: 44) // This size might need adjustment to match the actual size of your notification button
 
-            Spacer()
-            
             Text(title)
-                .font(.headline)
-                .frame(alignment: .center)
+                .font(.system(size: 22))
+                // Center the text in its frame
+                .frame(maxWidth: .infinity, alignment: .center)
 
-            Spacer()
-
-            // Notification Icon Button
-            Button(action: notificationAction) {
-                Image(systemName: "bell.fill")
-                    .imageScale(.large)
-                    .padding()
-            }
+            // Invisible Spacer on the right to mimic the space for notification icon
+            // Use this even if the notification icon is commented out to maintain symmetry
+            Color.clear
+                .frame(width: 70, height: 44)
         }
         .padding(.vertical, 5)
         .background(Color.white)

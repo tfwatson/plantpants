@@ -12,7 +12,7 @@ struct Profile: Hashable, Identifiable{
     let image:String	
     var plants: [Plant]
     var pals: [Profile]
-    
+    var notifications: [String]
 }
 
 
@@ -25,7 +25,8 @@ struct mockData {
             plants: [
                 Plant(name: "Cactus", temperature: "Dry", Description: "A resilient cactus.")
             ],
-            pals: [] // Assuming no nested pals for simplicity
+            pals: [],
+            notifications: []
         ),
         Profile(
             name: "Bob Jones",
@@ -33,7 +34,8 @@ struct mockData {
             plants: [
                 Plant(name: "Succulent", temperature: "Moderate", Description: "A low-maintenance succulent.")
             ],
-            pals: []
+            pals: [],
+            notifications: []
         ),
         Profile(
             name: "Jimmy Jones",
@@ -41,7 +43,8 @@ struct mockData {
             plants: [
                 Plant(name: "Cactus", temperature: "Dry", Description: "A resilient cactus.")
             ],
-            pals: [] // Assuming no nested pals for simplicity
+            pals: [],
+            notifications: []
         ),
         Profile(
             name: "Billy Jean",
@@ -49,7 +52,8 @@ struct mockData {
             plants: [
                 Plant(name: "Succulent", temperature: "Moderate", Description: "A low-maintenance succulent.")
             ],
-            pals: []
+            pals: [],
+            notifications: []
         ),
         
     ]
@@ -70,7 +74,8 @@ struct mockData {
             Plant(name: "Rose", temperature: "Moderate", Description: "A beautiful red rose."),
             // Add more plants as needed
         ],
-        pals: mockPals
+        pals: mockPals,
+        notifications:["toast 1", "Toast 2","Toast 3","Toast 4","Toast 5"]
     )
     
 }
