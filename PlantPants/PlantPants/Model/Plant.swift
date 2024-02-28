@@ -6,9 +6,9 @@
 //
 
 import Foundation
-struct Plant: Hashable, Identifiable{
-    let id = UUID()
+struct Plant: Codable {
     let name:String
     let temperature:String
     let Description:String
 }
+

@@ -11,14 +11,12 @@ import FirebaseCore
 
 @main
 struct PlantPantsApp: App {
-    
+    @StateObject var viewModel = AuthViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
-            Group {
-                OptionsView()
-            }
+            ContentView().environmentObject(viewModel)
         }
     }
 }
@@ -33,3 +31,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     return true
   }
 }
+

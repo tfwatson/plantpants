@@ -17,6 +17,7 @@ struct HomeProfileView: View {
             Text("Hello, \(userName)")
                 .font(.subheadline)
                 .padding(.leading, 8)
+                .foregroundColor(Color(.black))
             
             // Displaying the user's profile picture
             Image(userProfilePicture)
@@ -41,3 +42,4 @@ struct HomeProfileView_Previews: PreviewProvider {
         HomeProfileView(userName: "Andrew Gonzales", userProfilePicture: "UserProfilePicture")
     }
 }
+

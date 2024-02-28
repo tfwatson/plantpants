@@ -26,7 +26,6 @@ struct PlantCardView: View {
                     .font(.system(size: 27))
                     .scaledToFit()
             }
-            .frame(width: .infinity, height: .infinity)
         }
         .frame(width: 185, height: 100)
         .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
@@ -95,3 +94,4 @@ struct PalCardView: View {
 #Preview {
     PlantCardView(givenPlant: mockData.mockProfile.plants[1])
 }
+

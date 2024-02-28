@@ -33,3 +33,4 @@ struct NavigationBarView_Previews: PreviewProvider {
         })
     }
 }
+

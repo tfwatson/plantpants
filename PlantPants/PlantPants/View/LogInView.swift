@@ -4,18 +4,25 @@
 //
 //  Created by Andrew Julian Gonzales on 1/25/24.
 //
-
+//
+/*
+ Model: is like a object/Datatype
+ View: display/UI (Stupid)
+ ModelView: is what handles the data, to display
+ */
 import SwiftUI
 
 struct LogInView: View {
-    @State private var email:String=""
-    @State private var password:String=""
-    @State private var action: Int? = 0
+    
+    
+    @State private var email = ""
+    @State private var password = ""
+    
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        ZStack{
-            
+        NavigationView {
+            ZStack{
                 VStack {
-                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(), tag: 1, selection: $action) {}
                     Text("Welcome Back, Please sign in")
                         .bold()
                         .font(.title2)
@@ -24,17 +31,25 @@ struct LogInView: View {
                         .resizable()
                         .frame(width: 200, height: 200)
                         .padding(.bottom)
-                    LoginTextField(placeHolder: " Email", destination: $email)
-                    LoginTextField(placeHolder: " Password", destination: $password)
-                    LoginSignUpButton(title: "Log In", backgroundColor: Color("backgroundColor"), textColor: Color.white)
-                        .onTapGesture {
-                            self.action = 1
-                            let _ = print("CLICKED!")
+                    InputView(text: $email, placeHolder: "Email")
+                    InputView(text: $password, placeHolder: "password", isSecureField: true)
+                    
+                    Button {
+                        Task {
+                            try await viewModel.signIn(email: email, password: password)
                         }
+                    }label: {
+                        AuthenticationButtonView(title: "Log In", backgroundColor: Color("backgroundColor"), textColor: Color.white)
+                    }
                     
                 }
-            
-        }.ignoresSafeArea()
+
+            }
+            .ignoresSafeArea()
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden()
+        }
+
     }
 }
 
@@ -42,17 +57,5 @@ struct LogInView: View {
     LogInView()
 }
 
-struct LoginTextField: View {
-    let placeHolder:String
-    @Binding var destination:String
-    
-    var body: some View {
-        TextField(placeHolder, text: $destination)
-            .font(.title3)
-            .fontWeight(.semibold)
-            .frame(width: 355, height: 50)
-            .scaledToFit()
-            .background(Color(.systemGray6))
-            .cornerRadius(10)
-    }
-}
+
+
