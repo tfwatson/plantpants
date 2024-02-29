@@ -48,6 +48,7 @@ class AuthViewModel: ObservableObject {
     
     func signOut() {
         
+        
     }
     
     func deleteAccount(){
