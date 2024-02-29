@@ -4,10 +4,10 @@ import SwiftUI
  Maybe have multiple shades of green and brown, then have pastel pink for highlighting, and shading
  */
 struct HomeView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+//    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        if let user = viewModel.currentProfile {
+//        if let user = viewModel.currentProfile {
             let columns: [GridItem] = [
                 GridItem(.flexible()),
                 GridItem(.flexible())
@@ -26,7 +26,7 @@ struct HomeView: View {
                         NavigationLink{
                             ProfileView()
                         }label: {
-                            HomeProfileView(userName: user.fullName, userProfilePicture: "default")
+                            HomeProfileView(userName: "Test Name", userProfilePicture: "default")
                         }
                         
                         
@@ -84,7 +84,7 @@ struct HomeView: View {
             }
             .navigationBarHidden(true) // Hide the default navigation bar
         }
-    }
+//    }
     
     
 }
