@@ -23,7 +23,7 @@ struct LogInView: View {
         NavigationView {
             ZStack{
                 VStack {
-                    Text("Welcome Back, Please sign in")
+                    Text("Welcome Back, Please Log In")
                         .bold()
                         .font(.title2)
                     Image("babyPlantOne")
@@ -41,6 +41,8 @@ struct LogInView: View {
                     }label: {
                         AuthenticationButtonView(title: "Log In", backgroundColor: Color("backgroundColor"), textColor: Color.white)
                     }
+                    .disabled(!formIsValid)
+                    .opacity(formIsValid ? 1.0:0.5)
                     
                 }
 
@@ -50,6 +52,15 @@ struct LogInView: View {
             .navigationBarBackButtonHidden()
         }
 
+    }
+}
+
+extension LogInView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
     }
 }
 

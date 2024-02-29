@@ -4,82 +4,86 @@ import SwiftUI
  Maybe have multiple shades of green and brown, then have pastel pink for highlighting, and shading
  */
 struct HomeView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
-        let columns: [GridItem] = [
-            GridItem(.flexible()),
-            GridItem(.flexible())
-        ]
+        if let user = viewModel.currentProfile {
+            let columns: [GridItem] = [
+                GridItem(.flexible()),
+                GridItem(.flexible())
+            ]
 
-        NavigationView {
-            VStack(spacing: 0) {
-                // Custom NavigationBarView at the top
-                NavigationBarView(title: "PLANTPANTS") {
-                    print("notifications")
-                }
-
-                // Main content in ScrollView
-                ScrollView {
-                    // User Profile and Name
-                    NavigationLink{
-                        ProfileView()
-                    }label: {
-                        HomeProfileView(userName: "Andrew Gonzales", userProfilePicture: "default")
+            NavigationView {
+                VStack(spacing: 0) {
+                    // Custom NavigationBarView at the top
+                    NavigationBarView(title: "PLANTPANTS") {
+                        print("notifications")
                     }
-                    
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(mockData.mockProfile.notifications, id: \.self) { notification in
-                                NotificationView(notification: notification)
-                            }
+
+                    // Main content in ScrollView
+                    ScrollView {
+                        // User Profile and Name
+                        NavigationLink{
+                            ProfileView()
+                        }label: {
+                            HomeProfileView(userName: user.fullName, userProfilePicture: "default")
                         }
-                        .padding(.horizontal, 15)
-                    }
-                    
-
-                    // Title "MyPlants"
-                    Text("MyPlants")
-                        .bold()
-                        .font(.title)
-                        .padding(.trailing, 250)
-                        .scaledToFit()
-                    
-                    // ScrollView for plants
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHGrid(rows: columns, spacing: 10) {
-                            ForEach((0...mockData.mockProfile.plants.count), id: \.self) { index in
-                                if index < mockData.mockProfile.plants.count {
-                                    PlantCardView(givenPlant: mockData.mockProfile.plants[index])
-                                } else {
-                                    AddPlantCardView()
+                        
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(mockData.mockProfile.notifications, id: \.self) { notification in
+                                    NotificationView(notification: notification)
                                 }
                             }
+                            .padding(.horizontal, 15)
                         }
-                        .frame(height: 210)
-                    }
-                    .padding(.leading, 9)
-                    
-                    Text("Plant Pals")
-                        .bold()
-                        .font(.title)
-                        .padding(.trailing, 240)
-                        .scaledToFit()
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHGrid(rows: columns, spacing: 10) {
-                            ForEach(mockData.mockProfile.pals, id: \.id) { pal in
-                                PalCardView(pal: pal.fullName)
+                        
+
+                        // Title "MyPlants"
+                        Text("MyPlants")
+                            .bold()
+                            .font(.title)
+                            .padding(.trailing, 250)
+                            .scaledToFit()
+                        
+                        // ScrollView for plants
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHGrid(rows: columns, spacing: 10) {
+                                ForEach((0...mockData.mockProfile.plants.count), id: \.self) { index in
+                                    if index < mockData.mockProfile.plants.count {
+                                        PlantCardView(givenPlant: mockData.mockProfile.plants[index])
+                                    } else {
+                                        AddPlantCardView()
+                                    }
+                                }
                             }
-                            AddPalCardView()
+                            .frame(height: 210)
                         }
-                        .frame(height: 210)
                         .padding(.leading, 9)
+                        
+                        Text("Plant Pals")
+                            .bold()
+                            .font(.title)
+                            .padding(.trailing, 240)
+                            .scaledToFit()
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHGrid(rows: columns, spacing: 10) {
+                                ForEach(mockData.mockProfile.pals, id: \.id) { pal in
+                                    PalCardView(pal: pal.fullName)
+                                }
+                                AddPalCardView()
+                            }
+                            .frame(height: 210)
+                            .padding(.leading, 9)
+                        }
+                        
                     }
-                    
                 }
             }
+            .navigationBarHidden(true) // Hide the default navigation bar
         }
-        .navigationBarHidden(true) // Hide the default navigation bar
     }
     
     

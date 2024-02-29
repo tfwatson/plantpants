@@ -41,7 +41,7 @@ struct OptionsView: View {
                             .scaledToFit()
                             .foregroundColor(.black)
                         NavigationLink{
-                            SignInView()
+                            SignUpView()
                         }label: {
                             Text("Sign Up")
                                 .foregroundStyle(Color("backgroundColor"))

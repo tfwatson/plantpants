@@ -1,7 +1,7 @@
 //
 //  AuthViewModel.swift
 //  PlantPants
-//
+//  Source: https://www.youtube.com/watch?v=QJHmhLGv-_0&t=4980s
 //  Created by Andrew Julian Gonzales on 2/27/24.
 //
 import SwiftUI
@@ -10,6 +10,10 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestoreInternalWrapper
 import FirebaseFirestore
+
+protocol AuthenticationFormProtocol{
+    var formIsValid: Bool {get}
+}
 
 //View is going to obser changes on the viewModel (Observable Object)
 @MainActor
@@ -25,7 +29,13 @@ class AuthViewModel: ObservableObject {
     }
     
     func signIn(email: String, password: String) async throws {
-        print("Sign In")
+        do {
+            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            self.profileSession = result.user
+            await fetchProfile()
+        } catch {
+            print("DEBUG: Failed to login with error \(error.localizedDescription)")
+        }
     }
     
     /*
@@ -39,7 +49,7 @@ class AuthViewModel: ObservableObject {
             let user = Profile(id: result.user.uid, fullName: fullName, email: email, image: "", plants: [], pals: [], notifications: [])
             let endcodedUser =  try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("Users").document(user.id).setData(endcodedUser)
-            
+            await fetchProfile()
         }catch{
             print("DEBUG: Failed to create user with error \(error.localizedDescription)")
         }
@@ -47,7 +57,13 @@ class AuthViewModel: ObservableObject {
     
     
     func signOut() {
-        
+        do {
+            try Auth.auth().signOut() //sign out on user backend
+            self.profileSession = nil //wipes out user session and us back to login screen
+            self.currentProfile = nil //wipes out current user datamodel
+        } catch {
+            print("DEBUG: Faild to Sign Out")
+        }
         
     }
     
