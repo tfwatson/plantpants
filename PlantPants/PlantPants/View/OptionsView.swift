@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  OptionsView.swift
 //  PP_UI
 //
 //  Created by Andrew Julian Gonzales on 1/25/24.
@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct OptionsView: View {
-    @State private var action: Int? = 0
     var body: some View {
         ZStack {
             Color(.white).ignoresSafeArea()
             NavigationView {
                 VStack {
                     VStack{
-                        NavigationLink(destination: LogInView(), tag: 1, selection: $action) {}
                         Text("Welcome to")
                             .font(.title2)
                             .bold()
@@ -30,20 +28,30 @@ struct OptionsView: View {
                         .resizable()
                         .frame(width: 300, height: 300)
                         .padding(.bottom)
-                    LoginSignUpButton(title: "Log In", backgroundColor: Color("backgroundColor"), textColor: Color.white)
-                        .onTapGesture {
-                            self.action = 1
-                        }
+                    
+                    NavigationLink{
+                        LogInView()
+                    }label: {
+                        AuthenticationButtonView(title: "Log In", backgroundColor: Color("backgroundColor"), textColor: Color.white)
+                    }
+                    
+                        
                     HStack {
                         Text("New around here? ")
                             .scaledToFit()
-                        Text("Sign Up")
-                            .foregroundStyle(Color("backgroundColor"))
-                            .scaledToFit()
+                            .foregroundColor(.black)
+                        NavigationLink{
+                            SignInView()
+                        }label: {
+                            Text("Sign Up")
+                                .foregroundStyle(Color("backgroundColor"))
+                                .scaledToFit()
+                        }
+                        
                     }
                 }
+                
             }
-            
             .padding()
         }
     }
@@ -52,5 +60,6 @@ struct OptionsView: View {
 #Preview {
     OptionsView()
 }
+
 
 

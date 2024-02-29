@@ -20,7 +20,12 @@ struct HomeView: View {
                 // Main content in ScrollView
                 ScrollView {
                     // User Profile and Name
-                    HomeProfileView(userName: "Andrew Gonzales", userProfilePicture: "default")
+                    NavigationLink{
+                        ProfileView()
+                    }label: {
+                        HomeProfileView(userName: "Andrew Gonzales", userProfilePicture: "default")
+                    }
+                    
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
@@ -63,7 +68,7 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: columns, spacing: 10) {
                             ForEach(mockData.mockProfile.pals, id: \.id) { pal in
-                                PalCardView(pal: pal.name)
+                                PalCardView(pal: pal.fullName)
                             }
                             AddPalCardView()
                         }
@@ -86,3 +91,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+

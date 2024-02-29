@@ -6,13 +6,25 @@
 //
 
 import Foundation
-struct Profile: Hashable, Identifiable{
-    let id = UUID()
-    let name:String   //its let because they are not going to be changing. meaning they are constants
-    let image:String	
+
+struct Profile: Codable{
+    let id:String
+    let fullName:String   //its let because they are not going to be changing. meaning they are constants
+    let email:String
+    
+    var initials:String {
+        let formatter = PersonNameComponentsFormatter()
+        if let components = formatter.personNameComponents(from: fullName){
+            formatter.style = .abbreviated
+            return formatter.string(from: components)
+        }
+        return""
+    }
+    let image:String
     var plants: [Plant]
     var pals: [Profile]
     var notifications: [String]
+    
 }
 
 
@@ -20,7 +32,7 @@ struct mockData {
     
     static let mockPals: [Profile] = [
         Profile(
-            name: "Alice Smith",
+            id: "", fullName: "Alice Smith", email: "test@gmail.com",
             image: "profile_image_alice",
             plants: [
                 Plant(name: "Cactus", temperature: "Dry", Description: "A resilient cactus.")
@@ -29,7 +41,7 @@ struct mockData {
             notifications: []
         ),
         Profile(
-            name: "Bob Jones",
+            id: "", fullName: "Bob Jones", email: "test@gmail.com",
             image: "profile_image_bob",
             plants: [
                 Plant(name: "Succulent", temperature: "Moderate", Description: "A low-maintenance succulent.")
@@ -38,7 +50,7 @@ struct mockData {
             notifications: []
         ),
         Profile(
-            name: "Jimmy Jones",
+            id: "", fullName: "Jimmy Jones", email: "test@gmail.com",
             image: "profile_image_alice",
             plants: [
                 Plant(name: "Cactus", temperature: "Dry", Description: "A resilient cactus.")
@@ -47,7 +59,7 @@ struct mockData {
             notifications: []
         ),
         Profile(
-            name: "Billy Jean",
+            id: "", fullName: "Billy Jean", email: "test@gmail.com",
             image: "profile_image_bob",
             plants: [
                 Plant(name: "Succulent", temperature: "Moderate", Description: "A low-maintenance succulent.")
@@ -59,7 +71,7 @@ struct mockData {
     ]
     
     static let mockProfile: Profile = Profile(
-        name: "John Doe",
+        id: "", fullName: "John Doe", email: "test@gmail.com",
         image: "profile_image",
         plants: [
             Plant(name: "Rose", temperature: "Moderate", Description: "A beautiful red rose."),
