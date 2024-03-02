@@ -27,6 +27,7 @@
 		77C534312B8965DE00BDDEDA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 77C534302B8965DE00BDDEDA /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		77C534332B8965DE00BDDEDA /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 77C534322B8965DE00BDDEDA /* FirebaseAppCheck */; };
 		9EDDCEBC2B8D577600E53808 /* PlantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDCEBB2B8D577600E53808 /* PlantDetailsView.swift */; };
+		9EDDCEBE2B92D38900E53808 /* PlantInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDCEBD2B92D38900E53808 /* PlantInformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		77C534252B8738B900BDDEDA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		77C534272B89651A00BDDEDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9EDDCEBB2B8D577600E53808 /* PlantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailsView.swift; sourceTree = "<group>"; };
+		9EDDCEBD2B92D38900E53808 /* PlantInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				7717FBA12B721F68000745CA /* navigationBarView.swift */,
 				77C534252B8738B900BDDEDA /* NotificationView.swift */,
 				9EDDCEBB2B8D577600E53808 /* PlantDetailsView.swift */,
+				9EDDCEBD2B92D38900E53808 /* PlantInformationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				9EDDCEBC2B8D577600E53808 /* PlantDetailsView.swift in Sources */,
 				7717FB982B7209B9000745CA /* PlantCardView.swift in Sources */,
 				7717FB922B720992000745CA /* Profile.swift in Sources */,
+				9EDDCEBE2B92D38900E53808 /* PlantInformationView.swift in Sources */,
 				7717FB912B720992000745CA /* Plant.swift in Sources */,
 				7717FBA22B721F68000745CA /* navigationBarView.swift in Sources */,
 				774674842B71EA3A0020B2B7 /* PlantPantsApp.swift in Sources */,

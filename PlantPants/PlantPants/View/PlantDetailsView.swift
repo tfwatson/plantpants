@@ -13,6 +13,8 @@ struct PlantDetailsView: View {
     @State private var plantType: String = ""
     @State private var isLoading: Bool = false
     @State private var plantDetails: PlantDetails? = nil
+    @State private var isShowingPlantInformation = false
+    @State private var action: Int? = 0
     
     var body: some View {
         NavigationView {
@@ -42,9 +44,19 @@ struct PlantDetailsView: View {
             }
             .navigationBarTitle("Add Plant Details", displayMode: .inline)
         }
+        .background(
+            NavigationLink(destination: LogInView(), tag: 1, selection: $action) {}
+        )
         // This is where we process the stuff we get from the api like watering etc
         .alert(item: $plantDetails) { details in
-            Alert(title: Text("\(plantName) The \(details.commonName)"), message: Text("Watering: \(details.watering)\nSunlight: \(details.sunlight)"), dismissButton: .default(Text("OK")))
+            //
+            Alert(
+                title: Text("\(plantName) The \(details.commonName)"),
+                message: Text("Watering: \(details.watering)\nSunlight: \(details.sunlight)"),
+                dismissButton: .default(Text("OK")) {
+                    action = 1
+                }
+            )
         }
     }
     
