@@ -19,13 +19,14 @@
 		774674842B71EA3A0020B2B7 /* PlantPantsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774674832B71EA3A0020B2B7 /* PlantPantsApp.swift */; };
 		774674882B71EA3C0020B2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774674872B71EA3C0020B2B7 /* Assets.xcassets */; };
 		7746748B2B71EA3C0020B2B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7746748A2B71EA3C0020B2B7 /* Preview Assets.xcassets */; };
+		77C534262B8738B900BDDEDA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C534252B8738B900BDDEDA /* NotificationView.swift */; };
 		77C534282B89651A00BDDEDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77C534272B89651A00BDDEDA /* GoogleService-Info.plist */; };
 		77C5342B2B8965DE00BDDEDA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 77C5342A2B8965DE00BDDEDA /* FirebaseAnalytics */; };
 		77C5342D2B8965DE00BDDEDA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 77C5342C2B8965DE00BDDEDA /* FirebaseAnalyticsOnDeviceConversion */; };
 		77C5342F2B8965DE00BDDEDA /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77C5342E2B8965DE00BDDEDA /* FirebaseAnalyticsSwift */; };
 		77C534312B8965DE00BDDEDA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 77C534302B8965DE00BDDEDA /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		77C534332B8965DE00BDDEDA /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 77C534322B8965DE00BDDEDA /* FirebaseAppCheck */; };
-		77C534262B8738B900BDDEDA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C534252B8738B900BDDEDA /* NotificationView.swift */; };
+		9EDDCEBC2B8D577600E53808 /* PlantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDCEBB2B8D577600E53808 /* PlantDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +43,9 @@
 		774674832B71EA3A0020B2B7 /* PlantPantsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPantsApp.swift; sourceTree = "<group>"; };
 		774674872B71EA3C0020B2B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7746748A2B71EA3C0020B2B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		77C534272B89651A00BDDEDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77C534252B8738B900BDDEDA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		77C534272B89651A00BDDEDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9EDDCEBB2B8D577600E53808 /* PlantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				7717FB9F2B721931000745CA /* HomeProfileView.swift */,
 				7717FBA12B721F68000745CA /* navigationBarView.swift */,
 				77C534252B8738B900BDDEDA /* NotificationView.swift */,
+				9EDDCEBB2B8D577600E53808 /* PlantDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				7717FBA02B721931000745CA /* HomeProfileView.swift in Sources */,
 				7717FB9B2B7209B9000745CA /* OptionsView.swift in Sources */,
 				7717FB9E2B7209C5000745CA /* LoginSignUpButton.swift in Sources */,
+				9EDDCEBC2B8D577600E53808 /* PlantDetailsView.swift in Sources */,
 				7717FB982B7209B9000745CA /* PlantCardView.swift in Sources */,
 				7717FB922B720992000745CA /* Profile.swift in Sources */,
 				7717FB912B720992000745CA /* Plant.swift in Sources */,
