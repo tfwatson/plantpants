@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct UserPlant {
-    var imageName: String
-    var nickname: String
-    var typeName: String
-    var wateringFrequency: String // e.g., "Every 2 days"
-    var sunlightRequirement: String // e.g., "Partial shade"
-}
+//struct UserPlant {
+//    var imageName: String
+//    var nickname: String
+//    var typeName: String
+//    var wateringFrequency: String // e.g., "Every 2 days"
+//    var sunlightRequirement: String // e.g., "Partial shade"
+//}
 
 
 struct PlantInformationView: View {
