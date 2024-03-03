@@ -14,6 +14,7 @@ struct ContentView: View {
         Group {
             if viewModel.profileSession != nil {
                 HomeView()
+//                OptionsView()
             } else {
                 OptionsView()
             }

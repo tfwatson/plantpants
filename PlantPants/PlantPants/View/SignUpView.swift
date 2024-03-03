@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignInView: View {
+struct SignUpView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var fullName = ""
@@ -34,7 +34,21 @@ struct SignInView: View {
                     
                     InputView(text: $password, placeHolder: "Password", isSecureField: true)
                     
-                    InputView(text: $confirmPassword, placeHolder: "Confirm Password", isSecureField: true)
+                    ZStack(alignment: .trailing){
+                        InputView(text: $confirmPassword, placeHolder: "Confirm Password", isSecureField: true)
+                        if !password.isEmpty && !confirmPassword.isEmpty {
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(.green)
+                        }else{
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(.red)
+                        }
+                    }
+                    
                     
                     Button{
                         Task {
@@ -43,14 +57,27 @@ struct SignInView: View {
                     }label: {
                         AuthenticationButtonView(title: "Sign Up", backgroundColor: Color("backgroundColor"), textColor: Color.white)
                     }
+                    .disabled(!formIsValid)
+                    .opacity(formIsValid ? 1.0:0.5)
                     
                 }
         }.ignoresSafeArea()
     }
 }
 
+extension SignUpView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+        && confirmPassword == password
+        && !fullName.isEmpty
+    }
+}
+
 
 #Preview {
-    SignInView()
+    SignUpView()
 }
 
