@@ -10,23 +10,23 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        if let user = viewModel.currentProfile {
+//        if let user = viewModel.currentProfile {
             List {
                 Section {
                     HStack{
-                        Text(user.initials)
+                        Text("AG")//user.initials
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .foregroundColor(.white)
                             .frame(width: 90, height: 90)
                             .background(Color("backgroundColor"))
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         VStack{
-                            Text(user.fullName)
+                            Text("Andrew Gonzales")//user.fullName
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                                 .padding(.top, 4)
                             
-                            Text(user.email)
+                            Text("test@gmail.com")//user.email
                                 .font(.footnote)
                                 .accentColor(Color("backgroundColor"))
                             
@@ -59,7 +59,7 @@ struct ProfileView: View {
                 }
             }
         }
-    }
+//    }
 }
 
 #Preview {
