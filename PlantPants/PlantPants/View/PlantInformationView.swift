@@ -38,14 +38,22 @@ struct PlantInformationView: View {
                     
                     Divider()
                     
-                    Text("Type: \(plant.typeName)")
-                        .padding(.horizontal)
+                    HStack {
+                        //
+                        Text("Type: \(plant.typeName)")
+                    }.padding(.horizontal)
                     
-                    Text("Watering Frequency: \(plant.wateringFrequency)")
-                        .padding(.horizontal)
+                    HStack {
+                        Image(systemName: "drop.fill")
+                            .foregroundColor(.blue)
+                        Text("Watering Frequency: \(plant.wateringFrequency)")
+                    }.padding(.horizontal)
                     
-                    Text("Sunlight Requirement: \(plant.sunlightRequirement)")
-                        .padding(.horizontal)
+                    HStack {
+                        Image(systemName: "sun.max.fill")
+                            .foregroundColor(.yellow)
+                        Text("Sunlight Requirement: \(plant.sunlightRequirement)")
+                    }.padding(.horizontal)
                     
                     // Add more information here as needed
                     
