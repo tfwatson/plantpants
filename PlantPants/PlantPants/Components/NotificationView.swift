@@ -14,6 +14,7 @@ struct NotificationView: View {
         HStack {
            Text(notification)
                 .dynamicTypeSize(.xLarge)
+            // Super important comment
         }
         .frame(width: 370, height: 130)
         .aspectRatio(contentMode: .fill)
