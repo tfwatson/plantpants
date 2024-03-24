@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-<<<<<<< HEAD
+
 struct PlantDetailsView: View {
     @State private var plantName: String = ""
     @State private var nickName: String = ""
-=======
+    
 struct UserPlant {
     var imageName: String
     var nickname: String
@@ -23,7 +23,6 @@ struct UserPlant {
 
 struct PlantDetailsView: View {
     @State private var plantName: String = ""
->>>>>>> plant-details
     @State private var plantType: String = ""
     @State private var isLoading: Bool = false
     @State private var plantDetails: PlantDetails? = nil
@@ -59,20 +58,17 @@ struct PlantDetailsView: View {
             .navigationBarTitle("Add Plant Details", displayMode: .inline)
         }
         .background(
-<<<<<<< HEAD
 //            NavigationLink(destination: LogInView(), tag: 1, selection: $action) {}
         )
         // This is where we process the stuff we get from the api like watering etc
         .alert(item: $plantDetails) { details in
             //
-=======
             NavigationLink(destination: PlantInformationView(plant: UserPlant(imageName: "fern", nickname: "Timmy", typeName: "Boston Fern", wateringFrequency: "Every week", sunlightRequirement: "Partial shade")),
                            tag: 1,
                            selection: $action) {}
         )
         // This is where we process the stuff we get from the api like watering etc
-        .alert(item: $plantDetails) { details in
->>>>>>> plant-details
+        .alert(item: $plantDetails) {
             Alert(
                 title: Text("\(plantName) The \(details.commonName)"),
                 message: Text("Watering: \(details.watering)\nSunlight: \(details.sunlight)"),
@@ -96,12 +92,8 @@ struct PlantDetailsView: View {
     }
 }
 
-<<<<<<< HEAD
-=======
 
 
-
->>>>>>> plant-details
 struct PlantDetails: Identifiable {
     let id = UUID()
     let commonName: String
