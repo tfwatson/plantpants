@@ -54,7 +54,11 @@ struct HomeView: View {
                                     if index < mockData.mockProfile.plants.count {
                                         PlantCardView(givenPlant: mockData.mockProfile.plants[index])
                                     } else {
+                                        
                                         AddPlantCardView()
+                                        // Testing for feature
+//                                        PlantDetailsView()
+                                          
                                     }
                                 }
                             }

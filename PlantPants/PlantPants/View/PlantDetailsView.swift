@@ -1,5 +1,57 @@
 import SwiftUI
 
+// Defining a temporary struct for plant species to parse API response
+struct PlantSpecies: Decodable, Identifiable {
+    let id: String
+    let name: String
+}
+
+// Add a function to fetch plants from the API
+func fetchPlants(apiKey: String, completion: @escaping ([PlantSpecies]) -> Void) {
+    var allPlants = [PlantSpecies]()
+    var currentPage = 1
+    // Just place holder here the plant api loads 3000 results with current tier
+    let lastPage = 10
+    
+    func fetchPage(page: Int) {
+        let url = URL(string: "https://perenual.com/api/species-list?page=\(page)&key=\(apiKey)")!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            // Handle response error
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            // Handle no data
+            guard let data = data else {
+                print("No data received")
+                
+                return
+            }
+            // Otherwise parse the json file
+            do {
+                let decoder = JSONDecoder()
+                let fetchedPlants = try decoder.decode([PlantSpecies].self, from: data)
+                allPlants.append(contentsOf: fetchedPlants)
+                
+                if currentPage < lastPage {
+                    currentPage += 1
+                    fetchPage(page: currentPage)
+                } else {
+                    completion(allPlants)
+                }
+            }
+            // Handle JSON decoding error
+            catch {
+                print("Error decoding JSON: \(error)")
+                
+            }
+        }
+        task.resume()
+    }
+    
+    fetchPage(page: currentPage)
+}
+
 struct PlantDetailsView: View {
     @State private var plantName: String = ""
     @State private var plantType: String = ""
@@ -7,6 +59,8 @@ struct PlantDetailsView: View {
     @State private var plantDetails: PlantDetails? = nil
     @State private var isShowingPlantInformation = false
     @State private var action: Int? = 0
+    
+    let apiKey = "sk-EZhl65e15b11294f84414"
 
     var body: some View {
         NavigationView {
@@ -23,6 +77,7 @@ struct PlantDetailsView: View {
                 }
 
                 Section {
+                    
                     Button(action: fetchPlantDetails) {
                         HStack {
                             if isLoading {
@@ -54,11 +109,13 @@ struct PlantDetailsView: View {
         }
 
     }
-
+    
     func fetchPlantDetails() {
         isLoading = true
-        fetchDetailsFromAPI { details in
-            self.plantDetails = details
+        // Call the global function using its full name including the module name
+        PlantPants.fetchPlants(apiKey: apiKey) { plants in
+            // Handle fetched plants here just print them for rn
+            print(plants)
             self.isLoading = false
         }
     }
@@ -71,7 +128,7 @@ func fetchDetailsFromAPI(completion: @escaping (PlantDetails?) -> Void) {
         let details = PlantDetails(commonName: "Boston Fern", watering: "Weekly", sunlight: "Indirect light")
         completion(details)
     }
-}
+} 
 
 struct PlantDetails: Identifiable {
     let id = UUID()
