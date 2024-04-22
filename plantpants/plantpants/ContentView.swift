@@ -1,24 +1,28 @@
 //
 //  ContentView.swift
-//  plantpants
+//  PlantPants
 //
-//  Created by Andrew Julian Gonzales on 4/22/24.
+//  Created by Andrew Julian Gonzales on 2/27/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if viewModel.profileSession != nil {
+                HomeView()
+//                OptionsView()
+            } else {
+                OptionsView()
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
 }
+
