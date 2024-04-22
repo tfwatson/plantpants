@@ -54,6 +54,8 @@
 		774980742BD71FC60076421B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7749806D2BD71FC60076421B /* ProfileView.swift */; };
 		774980772BD720300076421B /* PlantPantsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774980762BD720300076421B /* PlantPantsApp.swift */; };
 		774980792BD720630076421B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774980782BD720630076421B /* ContentView.swift */; };
+		7777F0D72BD73BF500B9B76B /* DocPlantyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7777F0D62BD73BF500B9B76B /* DocPlantyView.swift */; };
+		7777F0DA2BD73C8700B9B76B /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 7777F0D92BD73C8700B9B76B /* OpenAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,7 @@
 		7749806D2BD71FC60076421B /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		774980762BD720300076421B /* PlantPantsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantPantsApp.swift; sourceTree = "<group>"; };
 		774980782BD720630076421B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7777F0D62BD73BF500B9B76B /* DocPlantyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocPlantyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 				774980272BD70A8C0076421B /* FirebaseFunctions in Frameworks */,
 				7749803D2BD70A8C0076421B /* FirebaseStorageCombine-Community in Frameworks */,
 				774980372BD70A8C0076421B /* FirebaseRemoteConfig in Frameworks */,
+				7777F0DA2BD73C8700B9B76B /* OpenAI in Frameworks */,
 				774980132BD70A8C0076421B /* FirebaseAppDistribution-Beta in Frameworks */,
 				774980172BD70A8C0076421B /* FirebaseAuthCombine-Community in Frameworks */,
 				774980352BD70A8C0076421B /* FirebasePerformance in Frameworks */,
@@ -189,6 +193,7 @@
 				774980692BD71FC60076421B /* OptionsView.swift */,
 				7749806D2BD71FC60076421B /* ProfileView.swift */,
 				7749806A2BD71FC60076421B /* SignUpView.swift */,
+				7777F0D62BD73BF500B9B76B /* DocPlantyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				774980382BD70A8C0076421B /* FirebaseRemoteConfigSwift */,
 				7749803A2BD70A8C0076421B /* FirebaseStorage */,
 				7749803C2BD70A8C0076421B /* FirebaseStorageCombine-Community */,
+				7777F0D92BD73C8700B9B76B /* OpenAI */,
 			);
 			productName = plantpants;
 			productReference = 77497FDD2BD709170076421B /* plantpants.app */;
@@ -269,6 +275,7 @@
 			mainGroup = 77497FD42BD709160076421B;
 			packageReferences = (
 				774980072BD70A8C0076421B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7777F0D82BD73C8700B9B76B /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = 77497FDE2BD709170076421B /* Products */;
 			projectDirPath = "";
@@ -304,6 +311,7 @@
 				774980772BD720300076421B /* PlantPantsApp.swift in Sources */,
 				7749805B2BD71F230076421B /* HomeProfileView.swift in Sources */,
 				7749805E2BD71F230076421B /* NotificationView.swift in Sources */,
+				7777F0D72BD73BF500B9B76B /* DocPlantyView.swift in Sources */,
 				774980792BD720630076421B /* ContentView.swift in Sources */,
 				7749805C2BD71F230076421B /* InputView.swift in Sources */,
 				774980582BD71F230076421B /* PlantCardView.swift in Sources */,
@@ -532,6 +540,15 @@
 				minimumVersion = 10.24.0;
 			};
 		};
+		7777F0D82BD73C8700B9B76B /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 1.0.0;
+				minimumVersion = 0.2.8;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -669,6 +686,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 774980072BD70A8C0076421B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		7777F0D92BD73C8700B9B76B /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7777F0D82BD73C8700B9B76B /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
