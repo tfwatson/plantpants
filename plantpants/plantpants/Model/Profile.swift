@@ -12,6 +12,7 @@ struct Profile: Codable{
     let fullName:String   //its let because they are not going to be changing. meaning they are constants
     let email:String
     
+    
     var initials:String {
         let formatter = PersonNameComponentsFormatter()
         if let components = formatter.personNameComponents(from: fullName){
@@ -87,7 +88,7 @@ struct mockData {
             // Add more plants as needed
         ],
         pals: mockPals,
-        notifications:["toast 1", "Toast 2","Toast 3","Toast 4","Toast 5"]
+        notifications:["Notification 1", "Notification 2","Notification 3","Notification 4","Toast 5"]
     )
     
 }
